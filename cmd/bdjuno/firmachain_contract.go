@@ -7,7 +7,7 @@ import (
 	contracttypes "github.com/firmachain/firmachain/x/contract/types"
 )
 
-func FirmaChainContractMessagesParser(_ codec.Marshaler, cosmosMsg sdk.Msg) ([]string, error) {
+func FirmaChainContractMessagesParser(_ codec.Codec, cosmosMsg sdk.Msg) ([]string, error) {
 	switch msg := cosmosMsg.(type) {
 	case *contracttypes.MsgAddContractLog:
 		return []string{msg.Creator, msg.OwnerAddress}, nil

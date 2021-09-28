@@ -1,20 +1,21 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/cosmos/cosmos-sdk/simapp"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	"github.com/desmos-labs/juno/cmd"
 	parsecmd "github.com/desmos-labs/juno/cmd/parse"
 	"github.com/desmos-labs/juno/modules/messages"
 
 	"github.com/firmachain/firmachain/app"
-	"github.com/forbole/bdjuno/database"
-	"github.com/forbole/bdjuno/modules"
+
 	"github.com/forbole/bdjuno/types/config"
 
-	"fmt"
-
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/forbole/bdjuno/database"
+	"github.com/forbole/bdjuno/modules"
 )
 
 func main() {
@@ -56,7 +57,6 @@ func getAddressesParser() messages.MessageAddressesParser {
 	)
 }
 
-// MessageNotSupported returns an error telling that the given message is not supported
 func MessageNotSupported(msg sdk.Msg) error {
-	return fmt.Errorf("message type not supported: %s", msg.Type())
+	return fmt.Errorf("message type not supported: %s", msg.String())
 }

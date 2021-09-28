@@ -12,21 +12,18 @@ var _ juno.Config = &Config{}
 // Config contains the data about the BDJuno configuration
 type Config struct {
 	juno.Config
-	PricefeedConfig    *PricefeedConfig
-	DistributionConfig *DistributionConfig
+	PricefeedConfig *PricefeedConfig
 }
 
 type tomlConfig struct {
-	PricefeedConfig    *PricefeedConfig    `toml:"pricefeed"`
-	DistributionConfig *DistributionConfig `toml:"distribution"`
+	PricefeedConfig *PricefeedConfig `toml:"pricefeed"`
 }
 
 // NewConfig returns a new Config instance
-func NewConfig(junoConfig juno.Config, pricefeedConfig *PricefeedConfig, distributionConfig *DistributionConfig) *Config {
+func NewConfig(junoConfig juno.Config, pricefeedConfig *PricefeedConfig) *Config {
 	return &Config{
-		Config:             junoConfig,
-		PricefeedConfig:    pricefeedConfig,
-		DistributionConfig: distributionConfig,
+		Config:          junoConfig,
+		PricefeedConfig: pricefeedConfig,
 	}
 }
 
@@ -43,7 +40,7 @@ func Parser(fileContents []byte) (juno.Config, error) {
 		return nil, err
 	}
 
-	return NewConfig(junoCfg, tomlCfg.PricefeedConfig, tomlCfg.DistributionConfig), nil
+	return NewConfig(junoCfg, tomlCfg.PricefeedConfig), nil
 }
 
 // GetRPCConfig implements juno.Config
@@ -94,14 +91,6 @@ func (c *Config) GetPricefeedConfig() *PricefeedConfig {
 	return c.PricefeedConfig
 }
 
-// GetDistributionConfig return current distribution frequency
-func (c *Config) GetDistributionConfig() *DistributionConfig {
-	if c.DistributionConfig == nil {
-		return &DistributionConfig{DistributionFrequency: 0}
-	}
-	return c.DistributionConfig
-}
-
 // --------------------------------------------------------------------------------------------------------------------
 
 // PricefeedConfig contains the configuration about the pricefeed module
@@ -112,14 +101,4 @@ type PricefeedConfig struct {
 // GetTokens returns the list of tokens for which to get the prices
 func (p *PricefeedConfig) GetTokens() []types.Token {
 	return p.Tokens
-}
-
-// DistributionConfig contains the configuration about distribution frequency
-type DistributionConfig struct {
-	DistributionFrequency int64 `toml:"distribution_frequency"`
-}
-
-// GetDistributionFrequency returns distribution frequency int64 value
-func (b *DistributionConfig) GetDistributionFrequency() int64 {
-	return b.DistributionFrequency
 }

@@ -38,7 +38,7 @@ import (
 
 // UniqueAddressesParser returns a wrapper around the given parser that removes all duplicated addresses
 func UniqueAddressesParser(parser messages.MessageAddressesParser) messages.MessageAddressesParser {
-	return func(cdc codec.Marshaler, msg sdk.Msg) ([]string, error) {
+	return func(cdc codec.Codec, msg sdk.Msg) ([]string, error) {
 		addresses, err := parser(cdc, msg)
 		if err != nil {
 			return nil, err
@@ -90,7 +90,7 @@ func (r *Registrar) BuildModules(ctx registrar.Context) jmodules.Modules {
 		auth.NewModule(r.parser, authClient, encodingConfig, bigDipperBd),
 		bank.NewModule(r.parser, authClient, bankClient, encodingConfig, bigDipperBd),
 		consensus.NewModule(ctx.Proxy, bigDipperBd),
-		distribution.NewModule(bdjunoCfg, bankClient, distrClient, bigDipperBd),
+		distribution.NewModule(bankClient, distrClient, bigDipperBd),
 		gov.NewModule(bankClient, govClient, stakingClient, encodingConfig, bigDipperBd),
 		mint.NewModule(mintClient, bigDipperBd),
 		modules.NewModule(ctx.ParsingConfig, bigDipperBd),

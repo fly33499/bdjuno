@@ -7,7 +7,7 @@ import (
 	nfttypes "github.com/firmachain/firmachain/x/nft/types"
 )
 
-func FirmaChainNFTMessagesParser(_ codec.Marshaler, cosmosMsg sdk.Msg) ([]string, error) {
+func FirmaChainNFTMessagesParser(_ codec.Codec, cosmosMsg sdk.Msg) ([]string, error) {
 	switch msg := cosmosMsg.(type) {
 	case *nfttypes.MsgMint:
 		return []string{msg.Owner}, nil
