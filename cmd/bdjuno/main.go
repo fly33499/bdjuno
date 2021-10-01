@@ -9,9 +9,7 @@ import (
 	"github.com/desmos-labs/juno/cmd"
 	parsecmd "github.com/desmos-labs/juno/cmd/parse"
 	"github.com/desmos-labs/juno/modules/messages"
-
 	"github.com/firmachain/firmachain/app"
-
 	"github.com/forbole/bdjuno/types/config"
 
 	"github.com/forbole/bdjuno/database"

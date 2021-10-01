@@ -19,5 +19,5 @@ func FirmaChainNFTMessagesParser(_ codec.Codec, cosmosMsg sdk.Msg) ([]string, er
 		return []string{msg.Owner, msg.ToAddress}, nil
 	}
 
-	return nil, MessageNotSupported(cosmosMsg)
+	return nil, nil
 }

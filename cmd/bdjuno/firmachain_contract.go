@@ -20,5 +20,5 @@ func FirmaChainContractMessagesParser(_ codec.Codec, cosmosMsg sdk.Msg) ([]strin
 		return addresses, nil
 	}
 
-	return nil, MessageNotSupported(cosmosMsg)
+	return nil, nil
 }
