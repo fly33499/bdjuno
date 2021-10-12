@@ -5,7 +5,7 @@ go 1.15
 require (
 	github.com/cosmos/cosmos-sdk v0.44.1
 	github.com/desmos-labs/juno v0.0.0-20210824054319-93b61f171e01
-	github.com/firmachain/firmachain v0.2.7
+	github.com/firmachain/firmachain v0.2.8
 	github.com/go-co-op/gocron v0.3.3
 	github.com/gogo/protobuf v1.3.3
 	github.com/jmoiron/sqlx v1.2.1-0.20200324155115-ee514944af4b
