@@ -191,8 +191,8 @@ github.com/coreos/pkg v0.0.0-20160727233714-3ac0863d7acf/go.mod h1:E3G3o1h8I7cfc
 github.com/coreos/pkg v0.0.0-20180928190104-399ea9e2e55f/go.mod h1:E3G3o1h8I7cfcXa63jLwjI0eiQQMgzzUDFVpN/nH/eA=
 github.com/cosmos/cosmos-sdk v0.43.0/go.mod h1:ctcrTEAhei9s8O3KSNvL0dxe+fVQGp07QyRb/7H9JYE=
 github.com/cosmos/cosmos-sdk v0.44.0/go.mod h1:orG0jzFJ2KsDfzLd/X0JSOMzF4Oxc/BQz2GkcYF4gRE=
-github.com/cosmos/cosmos-sdk v0.44.1 h1:UspmTMwKNGf6mH8k388v2T5csP9BYpPJkbQ/eG30PtM=
-github.com/cosmos/cosmos-sdk v0.44.1/go.mod h1:fwQJdw+aECatpTvQTo1tSfHEsxACdZYU80QCZUPnHr4=
+github.com/cosmos/cosmos-sdk v0.44.2 h1:EWoj9h9Q9t7uqS3LyqzZWWwnSEodUJlYDMloDoPBD3Y=
+github.com/cosmos/cosmos-sdk v0.44.2/go.mod h1:fwQJdw+aECatpTvQTo1tSfHEsxACdZYU80QCZUPnHr4=
 github.com/cosmos/go-bip39 v0.0.0-20180819234021-555e2067c45d/go.mod h1:tSxLoYXyBmiFeKpvmq4dzayMdCjCnu8uqmCysIGBT2Y=
 github.com/cosmos/go-bip39 v1.0.0 h1:pcomnQdrdH22njcAatO0yWojsUnCO3y2tNoV1cb6hHY=
 github.com/cosmos/go-bip39 v1.0.0/go.mod h1:RNJv0H/pOIVgxw6KS7QeX2a0Uo0aKUlfhZ4xuwvCdJw=
@@ -273,8 +273,8 @@ github.com/fatih/color v1.12.0/go.mod h1:ELkj/draVOlAH/xkhN6mQ50Qd0MPOk5AAr3maGE
 github.com/fatih/structtag v1.2.0/go.mod h1:mBJUNpUnHmRKrKlQQlmCrh5PuhftFbNv8Ys4/aAZl94=
 github.com/felixge/httpsnoop v1.0.1 h1:lvB5Jl89CsZtGIWuTcDM1E/vkVs49/Ml7JJe07l8SPQ=
 github.com/felixge/httpsnoop v1.0.1/go.mod h1:m8KPJKqk1gH5J9DgRY2ASl2lWCfGKXixSwevea8zH2U=
-github.com/firmachain/firmachain v0.2.8 h1:1dDbEHzkKYxy6uvPrF8id3zK0AwlLd669tPsjR8khLg=
-github.com/firmachain/firmachain v0.2.8/go.mod h1:fd1YFE0Q66TJW1WacjLZ9hjYqPJsVYkzMkmbLhcGlkk=
+github.com/firmachain/firmachain v0.2.9 h1:iQvOEuCK1Nl2T+kO+1bu/TcVkvlSpJxmpjnwuHhwags=
+github.com/firmachain/firmachain v0.2.9/go.mod h1:O9UhZBPiLSO49nMrkgLxjGUhOVh9ZnNsXW8KV9viMKQ=
 github.com/fjl/memsize v0.0.0-20180418122429-ca190fb6ffbc/go.mod h1:VvhXpOYNQvB+uIk2RvXzuaQtkQJzzIx6lSBe1xv7hi0=
 github.com/forbole/tendermint v0.34.13-0.20210820072129-a2a4af55563d h1:pUqGUgTUU24ibHeloQeg1F2pFbgQllddsuZ+x+CcUzw=
 github.com/forbole/tendermint v0.34.13-0.20210820072129-a2a4af55563d/go.mod h1:aeHL7alPh4uTBIJQ8mgFEE8VwJLXI1VD3rVOmH2Mcy0=
