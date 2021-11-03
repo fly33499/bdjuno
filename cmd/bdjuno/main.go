@@ -51,6 +51,7 @@ func getAddressesParser() messages.MessageAddressesParser {
 	return messages.JoinMessageParsers(
 		FirmaChainContractMessagesParser,
 		FirmaChainNFTMessagesParser,
+		FirmaChainTokenMessagesParser,
 		messages.CosmosMessageAddressesParser,
 	)
 }
