@@ -39,9 +39,6 @@ func UpdateProposal(
 		// Get the error code
 		var code string
 		_, err := fmt.Sscanf(err.Error(), ErrProposalNotFound, &code, &code, &id)
-		if err != nil {
-			return err
-		}
 
 		if code == codes.NotFound.String() {
 			// Handle case when a proposal is deleted from the chain (did not pass deposit period)
