@@ -19,11 +19,11 @@ require (
 	github.com/spf13/viper v1.10.1 // indirect
 	github.com/stretchr/testify v1.7.1
 	github.com/tendermint/tendermint v0.34.16
-	google.golang.org/grpc v1.45.0
-	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
+	google.golang.org/grpc v1.46.2
+	gopkg.in/yaml.v3 v3.0.1
 )
 
-require github.com/firmachain/firmachain v0.3.5-alpha2
+require github.com/firmachain/firmachain v0.3.5-alpha4
 
 require (
 	filippo.io/edwards25519 v1.0.0-beta.2 // indirect
@@ -127,8 +127,8 @@ require (
 	golang.org/x/sys v0.0.0-20220114195835-da31bd327af9 // indirect
 	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
 	golang.org/x/text v0.3.7 // indirect
-	google.golang.org/genproto v0.0.0-20220317150908-0efb43f6373e // indirect
-	google.golang.org/protobuf v1.27.1 // indirect
+	google.golang.org/genproto v0.0.0-20220519153652-3a47de7e79bd // indirect
+	google.golang.org/protobuf v1.28.0 // indirect
 	gopkg.in/ini.v1 v1.66.2 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	nhooyr.io/websocket v1.8.6 // indirect
