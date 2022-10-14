@@ -27,47 +27,43 @@ func between(value string, a string, b string) string {
 
 func FirmaChainAuthzMessagesParser(_ codec.Codec, cosmosMsg sdk.Msg) ([]string, error) {
 
-	//fmt.Println("hello world")
-	//fmt.Println("hello world")
-
 	switch msg := cosmosMsg.(type) {
+
+	case *authztype.MsgGrant:
+		var stringArray = []string{msg.Grantee, msg.Granter}
+		return stringArray, nil
+
+	case *authztype.MsgRevoke:
+		var stringArray = []string{msg.Grantee, msg.Granter}
+		return stringArray, nil
+
 	case *authztype.MsgExec:
-
-		//fmt.Println("msg.Grantee : " + msg.Grantee)
-		//fmt.Println(msg.GetMessages())
-		//fmt.Println("hello world")
-
 		msgs, _ := msg.GetMessages()
 
-		str1 := msgs[0].String()
-		slice := strings.Split(str1, " ")
-
 		var stringArray = []string{}
-
 		stringArray = append(stringArray, msg.Grantee)
 
-		for _, str := range slice {
+		total := len(msgs)
 
-			//fmt.Println(str)
-			//fmt.Println("----------")
+		for i := 0; i < total; i++ {
+			msgText := msgs[i].String()
+			slice := strings.Split(msgText, " ")
 
-			result := between(str, "firma1", "\"")
-			//fmt.Println(result)
-			//fmt.Println(len(result))
+			for _, str := range slice {
 
-			if len(result) > 0 {
-				stringArray = append(stringArray, result)
+				userAddress := between(str, "firma1", "\"")
+
+				if len(userAddress) > 0 {
+					stringArray = append(stringArray, userAddress)
+				}
+
+				valoperAddress := between(str, "firmavaloper1", "\"")
+
+				if len(valoperAddress) > 0 {
+					stringArray = append(stringArray, valoperAddress)
+				}
 			}
 
-			result2 := between(str, "firmavaloper1", "\"")
-			//fmt.Println(result2)
-			//fmt.Println(len(result2))
-
-			if len(result2) > 0 {
-				stringArray = append(stringArray, result2)
-			}
-
-			//fmt.Println("----------")
 		}
 
 		return stringArray, nil
