@@ -44,6 +44,8 @@ func FirmaChainAuthzMessagesParser(_ codec.Codec, cosmosMsg sdk.Msg) ([]string, 
 
 		var stringArray = []string{}
 
+		stringArray = append(stringArray, msg.Grantee)
+
 		for _, str := range slice {
 
 			//fmt.Println(str)
