@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-	"os"
 	"strings"
 
 	"github.com/cosmos/cosmos-sdk/codec"
@@ -71,12 +69,7 @@ func FirmaChainAuthzMessagesParser(_ codec.Codec, cosmosMsg sdk.Msg) ([]string, 
 		}
 
 		return stringArray, nil
-
-	default:
-		fmt.Println(msg)
 	}
-
-	os.Exit(3)
 
 	return nil, nil
 }
