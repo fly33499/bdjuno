@@ -29,8 +29,8 @@ func between(value string, a string, b string) string {
 
 func FirmaChainAuthzMessagesParser(_ codec.Codec, cosmosMsg sdk.Msg) ([]string, error) {
 
-	fmt.Println("hello world")
-	fmt.Println("hello world")
+	//fmt.Println("hello world")
+	//fmt.Println("hello world")
 
 	switch msg := cosmosMsg.(type) {
 	case *authztype.MsgExec:
