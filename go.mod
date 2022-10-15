@@ -6,7 +6,7 @@ require (
 	github.com/cosmos/cosmos-sdk v0.45.5
 	github.com/cosmos/gaia/v7 v7.0.0
 	github.com/firmachain/firmachain v0.3.5-alpha4
-	github.com/forbole/juno/v3 v3.3.0
+	github.com/forbole/juno/v3 v3.4.0
 	github.com/go-co-op/gocron v1.16.1
 	github.com/gogo/protobuf v1.3.3
 	github.com/jmoiron/sqlx v1.3.5
