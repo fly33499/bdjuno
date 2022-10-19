@@ -47,23 +47,63 @@ func FirmaChainAuthzMessagesParser(_ codec.Codec, cosmosMsg sdk.Msg) ([]string, 
 
 		for i := 0; i < total; i++ {
 			msgText := msgs[i].String()
-			slice := strings.Split(msgText, " ")
 
-			for _, str := range slice {
+			orgTotalLength := len(msgText)
 
-				userAddress := between(str, "firma1", "\"")
+			if orgTotalLength > 0 {
 
-				if len(userAddress) > 0 {
-					stringArray = append(stringArray, userAddress)
+				totalLength := orgTotalLength
+				msgTempText := msgText
+
+				for i := 0; i < totalLength; i++ {
+					idx := strings.Index(msgTempText, "firma1")
+					if idx != -1 {
+						const lenghOfAddress = 44
+						tempAddress := msgTempText[idx : idx+lenghOfAddress]
+						msgTempText = msgTempText[idx+lenghOfAddress:]
+						totalLength = len(msgTempText)
+						i = 0
+
+						isFindAddress := false
+						for _, v := range stringArray {
+							if v == tempAddress {
+								isFindAddress = true
+								break
+							}
+						}
+
+						if !isFindAddress {
+							stringArray = append(stringArray, tempAddress)
+						}
+					}
 				}
 
-				valoperAddress := between(str, "firmavaloper1", "\"")
+				totalLength = orgTotalLength
+				msgTempText = msgText
 
-				if len(valoperAddress) > 0 {
-					stringArray = append(stringArray, valoperAddress)
+				for i := 0; i < totalLength; i++ {
+					idx := strings.Index(msgTempText, "firmavaloper1")
+					if idx != -1 {
+						const lenghOfValidatorAddress = 51
+						tempAddress := msgTempText[idx : idx+lenghOfValidatorAddress]
+						msgTempText = msgTempText[idx+lenghOfValidatorAddress:]
+						totalLength = len(msgTempText)
+						i = 0
+
+						isFindAddress := false
+						for _, v := range stringArray {
+							if v == tempAddress {
+								isFindAddress = true
+								break
+							}
+						}
+
+						if !isFindAddress {
+							stringArray = append(stringArray, tempAddress)
+						}
+					}
 				}
 			}
-
 		}
 
 		return stringArray, nil
