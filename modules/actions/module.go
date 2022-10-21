@@ -1,6 +1,8 @@
 package actions
 
 import (
+	"fmt"
+
 	"github.com/cosmos/cosmos-sdk/simapp/params"
 	"github.com/forbole/juno/v3/modules"
 	"github.com/forbole/juno/v3/node"
@@ -36,6 +38,11 @@ func NewModule(cfg config.Config, encodingConfig *params.EncodingConfig) *Module
 	if err != nil {
 		panic(err)
 	}
+
+	fmt.Println("actionsCfg")
+	fmt.Println(actionsCfg)
+
+	//os.Exit(0)
 
 	nodeCfg := cfg.Node
 	if actionsCfg.Node != nil {
